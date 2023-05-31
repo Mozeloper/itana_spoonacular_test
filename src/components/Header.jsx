@@ -22,7 +22,7 @@ export default function Header() {
   }, [initialTheme]);
 
   return (
-    <div className="w-full flex md:flex-row flex-col justify-between items-center">
+    <div className="w-full flex md:flex-row flex-col-reverse mb-4 justify-between gap-3 items-center">
       <img
         src={logo}
         alt="logo"
