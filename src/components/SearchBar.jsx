@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { AiOutlineSearch } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const SearchBar = () => {
   const [text, setText] = useState("");
@@ -10,8 +11,18 @@ const SearchBar = () => {
     e.preventDefault();
     if (text !== "") {
       navigate(`/search?name=${text}`);
+      return;
     }
-    return null;
+    toast.error("Search field cannot be empty", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   return (
