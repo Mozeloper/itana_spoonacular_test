@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Searched from "./pages/Searched";
 import Recipe from "./pages/Recipe";
 import Header from "./components/Header";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function App() {
             <Route path="/diet/:type" element={<Dietary />} />
             <Route path="/search" element={<Searched />} />
             <Route path="/recipe/:id" element={<Recipe />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
         <ToastContainer />
